@@ -85,6 +85,7 @@ Minimal approach - legacy context menu, dark mode, wallpaper changes. Focused on
 | Privacy | Very deep | Moderate |
 | Ease of Use | Moderate | Easy |
 | Deployment | Slower | Faster |
+| WINDOWS PROCESSES | 48-92 AVG:70 | 49-85 AVG:67 |
 
 ---
 
