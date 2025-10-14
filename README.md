@@ -30,8 +30,7 @@ Click a badge to vote via **GitHub Reactions** (👍 for AtlasOS, ❤️ for Rev
 Reactions in the linked discussion will determine the winner.
 
 [![Vote for AtlasOS](https://img.shields.io/badge/AtlasOS-👍-blue?style=for-the-badge)](https://github.com/catsmoker/AtlasOS-vs-Revi-Comparison/discussions/1)  
-[![Vote for ReviOS](https://img.shields.io/badge/ReviOS-❤️-red?style=for-the-badge)](https://github.com/catsmoker/AtlasOS-vs-Revi-Comparison/discussions/1)  
-[![I love the two](https://img.shields.io/github/stars/catsmoker/AtlasOS-vs-Revi-Comparison?style=for-the-badge&color=yellow)](https://github.com/catsmoker/AtlasOS-vs-Revi-Comparison/stargazers)
+[![Vote for ReviOS](https://img.shields.io/badge/ReviOS-❤️-red?style=for-the-badge)](https://github.com/catsmoker/AtlasOS-vs-Revi-Comparison/discussions/1)
 
 ---
 
