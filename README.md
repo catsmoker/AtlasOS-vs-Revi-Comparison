@@ -24,7 +24,7 @@ This is just my personal take after looking at both playbooks. I'm not promoting
 
 ---
 
-## Architecture
+## Playbook Architecture
 
 **AtlasOS**
 Uses a main `custom.yml` file that calls dozens of smaller modules. Each tweak has it's own file which gives you tons of control but can be overwhelming.
