@@ -74,6 +74,27 @@ Minimal approach - legacy context menu, dark mode, wallpaper changes. Focused on
 
 ---
 
+## Benchmark
+
+| Benchmark                         | Metric                 | AtlasOS 11 | ReviOS 11 |
+|-----------------------------------|------------------------|-------------|------------|
+| **3DMark Time Spy**    | Overall                | 3482        | 3484       |
+|                                   | GPU                    | 3712        | 3710       |
+|                                   | CPU                    | 2580        | 2592       |
+| **3DMark Benchmark** | Total Score            | 3990        | 3989       |
+| **Geekbench 6 (CPU)**     | Single-Core            | 1706        | 1632       |
+|                                   | Multi-Core             | 5786        | 5610       |
+| **Geekbench 6 (GPU)** | GPU Score          | 40227       | 39970      |
+| **Gravity Mark (DX12)**           | Score (FPS)            | 29194 (175) | 29623 (175)|
+| **Unigine Heaven (DX11)**         | Score (FPS)            | 2722 (108)  | 2688 (107) |
+| **3DMark Time Spy**    | GPU                    | 10489       | 10520      |
+|                                   | CPU                    | 2838        | 2851       |
+| **Cinebench R23**                 | Single-Core            | 751         | 751        |
+|                                   | Multi-Core             | 2789        | 2744       |
+| **FurMark GPU**              | Score (FPS)            | 3552 (59)   | 3549 (59)  |
+
+---
+
 ## Summary
 
 | Category | AtlasOS | ReviOS |
