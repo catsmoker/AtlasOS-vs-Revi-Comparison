@@ -12,14 +12,14 @@ This is just my personal take after looking at both playbooks. I'm not promoting
 
 **AtlasOS v0.5.0 RC4**
 - Philosophy: Feature-rich and highly customizable
-- Structure: Around 452 files with modular YAML setup
-- Complexity: High - lots of flexibility but harder to manage
+- playbook Structure: Around 452 files with modular YAML setup
+- playbook Complexity: High - lots of flexibility but harder to manage
 - Speed: Slower deployment due to many tweaks
 
 **Revi-PB 25.10 (ReviOS)**
 - Philosophy: Minimalist and performance-focused
-- Structure: About 77 files, more compact
-- Complexity: Lower - cleaner and more stable
+- playbook Structure: About 77 files, more compact
+- playbook Complexity: Lower - cleaner and more stable
 - Speed: Faster and lighter overall
 
 ---
