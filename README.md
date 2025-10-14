@@ -1,170 +1,119 @@
-# Windows 11 25H2 10/14/2025
+# Windows 11 25H2 - AtlasOS vs ReviOS Comparison
 
-# 🧩 AtlasOS v0.5.0 RC4 vs Revi-PB 25.10 — Deep Dive Analysis
+**Date:** October 14, 2025
 
-> ⚠️ **Disclaimer:**  
-> This document reflects **only my personal analysis and opinions** after reviewing both playbooks.  
-> I do **not advertise, promote, or represent** any project mentioned here.  
-> I am **not responsible** for any damage, issues, or outcomes caused by applying these modifications.  
-> Always test safely and create backups before making system changes.
+## Disclaimer
+
+This is just my personal take after looking at both playbooks. I'm not promoting either project and I'm not responsible if something goes wrong on your system. Always backup your stuff before making changes.
 
 ---
 
-## 🏷️ Overview
+## Quick Overview
 
-| | **AtlasOS v0.5.0 RC4** | **Revi-PB 25.10 (ReviOS)** |
-|:-|:-|:-|
-| 🧠 **Philosophy** | Feature-rich, modular, and deeply customizable. | Minimalist, performance-oriented, and opinionated. |
-| 🧩 **Files & Structure** | ~452 files — modular YAML tree. | ~77 files — compact, hierarchical layout. |
-| ⚙️ **Main Control File** | `custom.yml` — calls many micro-tweak scripts. | `main.yml` — simpler top-level structure. |
-| 🔁 **Complexity** | High granularity and flexibility. | Clean, focused, and stable. |
-| 💾 **Deployment Speed** | Slower due to many tweaks. | Faster and lighter. |
+**AtlasOS v0.5.0 RC4**
+- Philosophy: Feature-rich and highly customizable
+- Structure: Around 452 files with modular YAML setup
+- Complexity: High - lots of flexibility but harder to manage
+- Speed: Slower deployment due to many tweaks
 
----
-
----
-
-## 🗳️ Community Poll — Which Playbook Do You Prefer?
-
-Click a badge to vote via **GitHub Reactions** (👍 for AtlasOS, ❤️ for ReviOS).  
-Reactions in the linked discussion will determine the winner.
-
-[![Vote for AtlasOS](https://img.shields.io/badge/AtlasOS-👍-blue?style=for-the-badge)](https://github.com/catsmoker/AtlasOS-vs-Revi-Comparison/discussions/1)  
-[![Vote for ReviOS](https://img.shields.io/badge/ReviOS-❤️-red?style=for-the-badge)](https://github.com/catsmoker/AtlasOS-vs-Revi-Comparison/discussions/1)
+**Revi-PB 25.10 (ReviOS)**
+- Philosophy: Minimalist and performance-focused
+- Structure: About 77 files, more compact
+- Complexity: Lower - cleaner and more stable
+- Speed: Faster and lighter overall
 
 ---
 
-> ⚠️ This poll is purely for community feedback. I am **not responsible** for any outcomes or decisions.  
-> These are **my personal observations and opinions** only.
+## Architecture
 
----
-## 🧠 Architecture and Logic
+**AtlasOS**
+Uses a main `custom.yml` file that calls dozens of smaller modules. Each tweak has it's own file which gives you tons of control but can be overwhelming.
 
-<details>
-<summary>📂 Click to expand</summary>
-
-### **AtlasOS**
-- Highly modular and sprawling system — the master `custom.yml` script orchestrates dozens of submodules.  
-- Each tweak lives in a specific YAML file (e.g., `tweaks\qol\explorer\disable-check-boxes.yml`).  
-- Incredibly flexible but harder to oversee at a glance.
-
-### **ReviOS**
-- Simpler and cleaner structure — `main.yml` calls task categories (`packages`, `registry`, `services`).  
-- Registry tweaks are grouped logically (explorer, privacy, system).  
-- Easier to maintain and understand but less granular.
-</details>
+**ReviOS**
+Simpler structure with `main.yml` coordinating everything. Registry tweaks are grouped logically making it easier to understand whats going on.
 
 ---
 
-## 🧹 Debloating and App Removal
+## Debloating
 
-<details>
-<summary>🗑️ Click to expand</summary>
+**AtlasOS**
+Removes apps safely using DISM and PowerShell. Gets rid of Cortana, Teams, Weather, OneDrive and other bloat.
 
-### **AtlasOS**
-- Uses DISM, AppX, and PowerShell scripts (`RemoveEdge.ps1`, `components.yml`).  
-- Removes many apps safely — Cortana, Teams, Weather, Alarms, Edge, OneDrive.  
-
-### **ReviOS**
-- Uses dedicated PowerShell scripts (`APPX-REMOVER.ps1`, `EDGE.ps1`).  
-- More **aggressive** — uninstalls AI features like **Recall** and **Copilot**.  
-- Temporarily changes region to force Edge removal.
-</details>
+**ReviOS**
+More aggressive approach - removes AI features like Recall and Copilot. Even temporarily changes region settings to force remove certain apps.
 
 ---
 
-## ⚙️ Performance and Optimization
+## Performance
 
-<details>
-<summary>🚀 Click to expand</summary>
+**AtlasOS**
+Has dedicated performance folder with MMCSS tuning, service optimization, NTFS tweaks, and power scheme adjustments.
 
-### **AtlasOS**
-- Dedicated `performance` folder.  
-- Tunes MMCSS, disables service host splitting, optimizes NTFS, adjusts power schemes.  
-
-### **ReviOS**
-- Focuses on fewer, but stronger tweaks:  
-  - Disables memory compression.  
-  - Prioritizes foreground apps.  
-  - Adds custom “Ultra Performance” power plan.  
-</details>
+**ReviOS**
+Focuses on fewer but stronger tweaks - disables memory compression, prioritizes foreground apps, adds custom "Ultra Performance" power plan. Generally more stable performance gains.
 
 ---
 
-## 🔒 Privacy and Telemetry
+## Privacy
 
-<details>
-<summary>🕵️ Click to expand</summary>
+**AtlasOS**
+Extensive privacy section covering advertising, telemetry, cloud services, NVIDIA tracking, Office telemetry. Disables alot of scheduled tasks and registry keys.
 
-### **AtlasOS**
-- Huge privacy section (advertising, telemetry, cloud, NVIDIA, Office).  
-- Disables a wide range of scheduled tasks, services, and registry keys.
-
-### **ReviOS**
-- Privacy handled mainly through registry tweaks.  
-- Targets Microsoft telemetry (CEIP, WER) but less extensive overall.
-</details>
+**ReviOS**
+Handles privacy mainly through registry tweaks. Targets Microsoft telemetry but less comprehensive then AtlasOS.
 
 ---
 
-## 🎨 Customization and Quality of Life (QoL)
+## Customization
 
-<details>
-<summary>🎛️ Click to expand</summary>
+**AtlasOS**
+Massive customization options - context menu changes, old menu styles, Atlas theme, includes Atlas Toolbox. Perfect for power users who want full control.
 
-### **AtlasOS**
-- Massive `qol` folder — adds context menu options, restores old menus, applies Atlas theme, and includes **Atlas Toolbox**.  
-- Ideal for power users who want control over UI and feel.
-
-### **ReviOS**
-- Minimalist approach — legacy context menu, dark mode, wallpaper changes, unpins Start items.  
-- Focused on clean aesthetics and simplicity.
-</details>
+**ReviOS**
+Minimal approach - legacy context menu, dark mode, wallpaper changes. Focused on simplicity and clean look.
 
 ---
 
-## 📊 Summary Comparison
+## Summary
 
-| **Category** | **AtlasOS** | **ReviOS** |
-|---------------|-------------|-------------|
-| 🧠 Architecture | Modular & complex | Compact & simple |
-| ⚙️ Performance | Good | **Excellent** |
-| 🧩 Stability | Good | **Excellent** |
-| 🧱 Customization | **Excellent** | Minimal |
-| 🔒 Privacy Depth | **Deep** | Medium |
-| 🧰 Ease of Use | Moderate | **Easy** |
-| 🧭 Deployment Speed | Slower | **Faster** |
-
----
-
-## ⚖️ Verdict
-
-| **Choose AtlasOS if...** | **Choose ReviOS if...** |
-|---------------------------|--------------------------|
-| You want **fine-grained control** over every part of your system. | You want **speed, stability, and minimalism**. |
-| You enjoy experimenting and tuning. | You prefer plug-and-play optimization. |
-| You don’t mind complexity. | You value simplicity. |
+| Category | AtlasOS | ReviOS |
+|----------|---------|---------|
+| Architecture | Complex & modular | Simple & compact |
+| Performance | Good | Excellent |
+| Stability | Good | Excellent |
+| Customization | Excellent | Basic |
+| Privacy | Very deep | Moderate |
+| Ease of Use | Moderate | Easy |
+| Deployment | Slower | Faster |
 
 ---
 
-## 💡 Conclusion
+## Which One Should You Choose?
 
-> **AtlasOS** = Deep customization, modular logic, and full user control.  
-> **ReviOS** = Streamlined performance, simplicity, and strong defaults.  
+**Go with AtlasOS if:**
+- You want granular control over every aspect
+- You enjoy experimenting and tweaking
+- You don't mind the complexity
 
-Both are technically impressive projects with distinct philosophies.
-
----
-
-### 🧾 Legal & Responsibility Disclaimer
-
-This comparison is provided **for educational and analytical purposes only**.  
-I do **not endorse, advertise, or promote** any software or organization mentioned.  
-I am **not responsible** for any system damage, malfunction, or issues caused by applying these configurations.  
-Use them **at your own risk**, preferably on a **test or virtual machine**.
+**Go with ReviOS if:**
+- You want speed, stability and simplicity
+- You prefer plug-and-play optimization
+- You value straightforward setup
 
 ---
 
-© 2025 — Independent Analysis Based on `AtlasOS v0.5.0 RC4` and `Revi-PB 25.10`.
+## Final Thoughts
 
+AtlasOS gives you deep customization and complete control. ReviOS gives you streamlined performance with strong defaults. Both are solid projects with different philosophies.
 
+Pick the one that matches your needs and experience level.
+
+---
+
+**Legal Notice**
+
+This comparison is for educational purposes only. I don't endorse or promote any software mentioned here. I'm not responsible for any damage or issues that might occur. Use at your own risk, preferably on a test machine first.
+
+---
+
+*Independent analysis based on AtlasOS v0.5.0 RC4 and Revi-PB 25.10*
