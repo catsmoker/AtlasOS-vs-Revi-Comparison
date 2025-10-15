@@ -31,7 +31,7 @@ This is just my personal take after looking at both playbooks. I'm not promoting
 - Atlas Folder
 
 **ReviOS**
-- Revi tool
+- Revision Tool
 
 ---
 
